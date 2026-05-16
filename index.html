@@ -50,6 +50,7 @@
         input[type="text"]:focus { outline: none; border-color: var(--joie-yellow); box-shadow: 0 0 0 4px rgba(242,169,0,.13); }
         input[type="text"]::placeholder { color: #9A9EA5; }
         button { padding: 13px 18px; border: 0; border-radius: 8px; font-size: 15px; font-weight: 700; line-height: 1.2; cursor: pointer; white-space: nowrap; transition: all .2s ease; }
+        button:hover { transform: translateY(-1px); }
         .btn-primary { background: var(--joie-yellow); color: #fff; }
         .btn-primary:hover { background: var(--joie-yellow-dark); transform: translateY(-1px); }
         .btn-secondary { background: #fff; color: var(--text-muted); border: 1px solid #D8DADE; }
@@ -74,6 +75,7 @@
         .store-address { color: var(--text-muted); margin: 0 0 15px 35px; font-size: 14px; line-height: 1.5; }
         .store-actions { display: flex; gap: 9px; flex-wrap: wrap; margin-left: 35px; }
         .store-actions a { padding: 10px 15px; border-radius: 8px; font-size: 14px; font-weight: 700; border: 1px solid; text-align: center; transition: all .2s ease; }
+        .store-actions a:hover { transform: translateY(-1px); }
         .btn-maps { background: var(--joie-yellow); border-radius: 8px; color: #fff; border-color: var(--joie-yellow); }
         .btn-maps:hover { background: var(--joie-yellow-dark); border-color: var(--joie-yellow-dark); }
         .btn-website { background: #fff; border-radius: 8px; color: var(--text-muted); border-color: #666B72; }
@@ -85,8 +87,8 @@
         .instagram-icon { width: 30px; height: 30px; }
         .instagram-title { font-size: 22px; line-height: 1.2; font-weight: 700; margin-bottom: 4px; color: var(--text-main); }
         .instagram-text { color: var(--text-muted); font-size: 15px; max-width: 560px; }
-        .instagram-cta { display: inline-flex; align-items: center; justify-content: center; padding: 12px 18px; border-radius: 999px; background: #393A3D; color: #fff; font-weight: 700; white-space: nowrap; transition: all .2s ease; }
-        .instagram-cta:hover { background: var(--joie-blue); transform: translateY(-1px); }
+        .instagram-cta { display: inline-flex; align-items: center; justify-content: center; padding: 10px 15px; border-radius: 8px; background: var(--joie-yellow); color: #fff; font-size: 14px; font-weight: 700; line-height: 1.2; white-space: nowrap; transition: all .2s ease; }
+        .instagram-cta:hover { background: var(--joie-yellow-dark); transform: translateY(-1px); }
         .site-footer { margin-top: 28px; padding: 36px var(--page-padding-x); background: var(--surface-soft); color: var(--text-soft); font-size: 12px; line-height: 1.5; flex-shrink: 0; }
         .footer-content { width: 100%; max-width: var(--content-width); margin: 0 auto; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 18px; align-items: start; }
         .footer-logo { display: block; height: 20px; width: auto; margin-top: 3px; filter: grayscale(100%) contrast(110%); opacity: .64; }
@@ -102,7 +104,7 @@
             .top-header { padding-top: 10px; padding-bottom: 10px; }
             .header-content { position: relative; justify-content: center; }
             .logo-container { position: absolute; left: 0; }
-            .language-switch { margin: 0 auto; }
+            .language-switch { position: absolute; right: 0; margin: 0; }
             .container { padding-top: 24px; }
             .subtitle { font-size: 16px; }
             .search-section { padding: 14px; border-radius: 16px; }
