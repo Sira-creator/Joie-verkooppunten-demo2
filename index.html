@@ -230,11 +230,30 @@
                 mapsQuery: isFr ? (store.maps_query_fr || `${store.name_fr || store.name}, ${store.address_fr || store.address}`) : (store.maps_query_nl || `${store.name}, ${store.address}`)
             };
         }
+        function toFiniteNumber(value) {
+            if (value === null || value === undefined || value === '') return null;
+            const number = typeof value === 'number' ? value : Number(String(value).replace(',', '.'));
+            return Number.isFinite(number) ? number : null;
+        }
+        function hasCoordinates(store) {
+            return toFiniteNumber(store.lat) !== null && toFiniteNumber(store.lng) !== null;
+        }
+        function hasValue(value) {
+            return value !== null && value !== undefined && String(value).trim() !== '';
+        }
         function getGoogleMapsUrl(store) {
             const local = localizedStore(store);
-            const query = encodeURIComponent(local.mapsQuery || `${local.name}, ${local.address}`);
-            const base = `https://www.google.com/maps/search/?api=1&query=${query}&hl=${GOOGLE_MAPS_HL}`;
-            return store.place_id ? `${base}&query_place_id=${encodeURIComponent(store.place_id)}` : base;
+            const placeId = hasValue(store.place_id) ? String(store.place_id).trim() : '';
+            const lat = toFiniteNumber(store.lat);
+            const lng = toFiniteNumber(store.lng);
+
+            if (!placeId && (lat === null || lng === null)) return '';
+
+            const queryText = lat !== null && lng !== null
+                ? `${lat},${lng}`
+                : (local.mapsQuery || `${local.name}, ${local.address}`);
+            const base = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(queryText)}&hl=${GOOGLE_MAPS_HL}`;
+            return placeId ? `${base}&query_place_id=${encodeURIComponent(placeId)}` : base;
         }
         function showStatus(message, type = 'info') {
             const statusDiv = document.getElementById('statusMessage');
@@ -244,32 +263,45 @@
         function renderStoreCard(store, distance = null) {
             const local = localizedStore(store);
             const mapsUrl = getGoogleMapsUrl(store);
-            const website = local.website || '#';
+            const website = hasValue(local.website) ? String(local.website).trim() : '';
             const distanceLabel = distance !== null ? `<div class="store-distance">${distance.toLocaleString(LOCALE, { maximumFractionDigits: 1 })} ${TEXT.distance_suffix}</div>` : '';
+            const actionButtons = [
+                mapsUrl ? `<a href="${escapeHtml(mapsUrl)}" target="_blank" rel="noopener" class="btn-maps">${TEXT.maps}</a>` : '',
+                website ? `<a href="${escapeHtml(website)}" target="_blank" rel="noopener" class="btn-website">${TEXT.webshop}</a>` : ''
+            ].join('');
             return `<article class="store-card">
                 <div class="store-header">
                     <div class="store-title-row">${PIN_ICON}<div><h2 class="store-name">${escapeHtml(local.name)}</h2></div></div>
                     ${distanceLabel}
                 </div>
-                <p class="store-address">${escapeHtml(local.address)}</p>
-                <div class="store-actions">
-                    <a href="${mapsUrl}" target="_blank" rel="noopener" class="btn-maps">${TEXT.maps}</a>
-                    <a href="${escapeHtml(website)}" target="_blank" rel="noopener" class="btn-website">${TEXT.webshop}</a>
-                </div>
+                ${hasValue(local.address) ? `<p class="store-address">${escapeHtml(local.address)}</p>` : ''}
+                ${actionButtons ? `<div class="store-actions">${actionButtons}</div>` : ''}
             </article>`;
         }
-        function validStore(store) {
-            return typeof store.lat === 'number' && typeof store.lng === 'number' && !Number.isNaN(store.lat) && !Number.isNaN(store.lng);
-        }
         function sortByDistance(lat, lng) {
-            return stores.filter(validStore).map(store => ({ ...store, distance: calculateDistance(lat, lng, store.lat, store.lng) })).sort((a, b) => a.distance - b.distance);
+            const withCoordinates = stores
+                .filter(hasCoordinates)
+                .map(store => {
+                    const storeLat = toFiniteNumber(store.lat);
+                    const storeLng = toFiniteNumber(store.lng);
+                    return { ...store, distance: calculateDistance(lat, lng, storeLat, storeLng) };
+                })
+                .sort((a, b) => a.distance - b.distance);
+            const withoutCoordinates = stores.filter(store => !hasCoordinates(store));
+            return [...withCoordinates, ...withoutCoordinates];
         }
         function renderStores(sortedStores = null) {
             const list = document.getElementById('storeList');
             const source = sortedStores || lastSortedStores || stores;
-            const validStores = source.filter(validStore);
-            if (!validStores.length) { list.innerHTML = `<div class="no-results">${TEXT.no_results}</div>`; return; }
-            list.innerHTML = validStores.map(store => renderStoreCard(store, typeof store.distance === 'number' ? store.distance : (userLocation ? calculateDistance(userLocation.lat, userLocation.lng, store.lat, store.lng) : null))).join('');
+            if (!source.length) { list.innerHTML = `<div class="no-results">${TEXT.no_results}</div>`; return; }
+            list.innerHTML = source.map(store => {
+                const storeLat = toFiniteNumber(store.lat);
+                const storeLng = toFiniteNumber(store.lng);
+                const distance = typeof store.distance === 'number'
+                    ? store.distance
+                    : (userLocation && storeLat !== null && storeLng !== null ? calculateDistance(userLocation.lat, userLocation.lng, storeLat, storeLng) : null);
+                return renderStoreCard(store, distance);
+            }).join('');
         }
         function useMyLocation() {
             const btn = document.getElementById('useLocationBtn');
