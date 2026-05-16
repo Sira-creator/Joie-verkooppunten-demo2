@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Trouvez les points de vente et boutiques en ligne Joie en Belgique et au Luxembourg.">
-    <title>Points de vente Joie Belgique et Luxembourg</title>
+    <meta name="description" content="Vind officiële Joie-verkooppunten en webshops in België en Luxemburg.">
+    <title>Joie verkooppunten België en Luxemburg</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -134,37 +134,37 @@
 <body>
     <header class="top-header">
         <div class="header-content">
-            <a class="logo-container" href="./index-fr.html" aria-label="Points de vente Joie"><img src="Joie-Logo.webp" alt="Joie"></a>
+            <a class="logo-container" href="./index.html" aria-label="Joie verkooppunten"><img src="Joie-Logo.webp" alt="Joie"></a>
             <nav class="language-switch" aria-label="Taalkeuze / Choix de langue">
-                <a class="lang-btn " href="./index.html" hreflang="nl">NL</a>
-                <a class="lang-btn active" href="./index-fr.html" hreflang="fr">FR</a>
+                <a class="lang-btn active" href="./index.html" hreflang="nl">NL</a>
+                <a class="lang-btn " href="./index-fr.html" hreflang="fr">FR</a>
             </nav>
         </div>
     </header>
     <main class="container">
         <section class="hero" aria-labelledby="page-title">
-            <h1 id="page-title">Trouvez Joie près de chez vous</h1>
-            <p class="subtitle">Découvrez les points de vente officiels et les boutiques en ligne en Belgique et au Luxembourg.</p>
+            <h1 id="page-title">Vind Joie bij jou in de buurt</h1>
+            <p class="subtitle">Ontdek de officiële verkooppunten en webshops in België en Luxemburg.</p>
         </section>
         <section class="search-section" aria-label="Store locator search">
             <div class="input-group">
-                <input type="text" id="locationInput" placeholder="Code postal ou ville, par exemple 1000 Bruxelles" autocomplete="postal-code">
-                <button class="btn-secondary" type="button" onclick="resetSearch()">Réinitialiser</button>
-                <button class="btn-primary" type="button" onclick="searchByAddress()">Rechercher</button>
+                <input type="text" id="locationInput" placeholder="Postcode of stad, bijvoorbeeld 1000 Brussel" autocomplete="postal-code">
+                <button class="btn-secondary" type="button" onclick="resetSearch()">Reset</button>
+                <button class="btn-primary" type="button" onclick="searchByAddress()">Zoek winkels</button>
             </div>
-            <button class="btn-location" id="useLocationBtn" type="button" onclick="useMyLocation()"><span class="location-label"><svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a1 1 0 0 1 1 1v1.07A8 8 0 0 1 19.93 11H21a1 1 0 1 1 0 2h-1.07A8 8 0 0 1 13 19.93V21a1 1 0 1 1-2 0v-1.07A8 8 0 0 1 4.07 13H3a1 1 0 1 1 0-2h1.07A8 8 0 0 1 11 4.07V3a1 1 0 0 1 1-1Zm0 4a6 6 0 1 0 0 12A6 6 0 0 0 12 6Zm0 3.25A2.75 2.75 0 1 1 12 14.75 2.75 2.75 0 0 1 12 9.25Z"/></svg>Utiliser ma position actuelle</span></button>
+            <button class="btn-location" id="useLocationBtn" type="button" onclick="useMyLocation()"><span class="location-label"><svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a1 1 0 0 1 1 1v1.07A8 8 0 0 1 19.93 11H21a1 1 0 1 1 0 2h-1.07A8 8 0 0 1 13 19.93V21a1 1 0 1 1-2 0v-1.07A8 8 0 0 1 4.07 13H3a1 1 0 1 1 0-2h1.07A8 8 0 0 1 11 4.07V3a1 1 0 0 1 1-1Zm0 4a6 6 0 1 0 0 12A6 6 0 0 0 12 6Zm0 3.25A2.75 2.75 0 1 1 12 14.75 2.75 2.75 0 0 1 12 9.25Z"/></svg>Gebruik mijn huidige locatie</span></button>
             <div id="statusMessage" aria-live="polite"></div>
         </section>
-        <section id="storeList" class="store-list" aria-live="polite"><div class="loading">Chargement des magasins...</div></section>
+        <section id="storeList" class="store-list" aria-live="polite"><div class="loading">Winkels laden...</div></section>
     </main>
     <section class="instagram-section" aria-label="Instagram">
         <div class="instagram-card">
             <div class="instagram-badge"><svg class="instagram-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-2.35a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z"/></svg></div>
             <div>
-                <h2 class="instagram-title">Suivez Joie Baby Belgique & Luxembourg</h2>
-                <p class="instagram-text">Restez informé des nouveautés, de l’inspiration produit et des actualités locales via la page Instagram de Joie pour la Belgique et le Luxembourg.</p>
+                <h2 class="instagram-title">Volg Joie Baby België & Luxemburg</h2>
+                <p class="instagram-text">Blijf op de hoogte van nieuwigheden, productinspiratie en lokaal nieuws via de Instagram-pagina van Joie voor België en Luxemburg.</p>
             </div>
-            <a class="instagram-cta" href="https://www.instagram.com/joiebaby_be/" target="_blank" rel="noopener">Suivre @joiebaby_be</a>
+            <a class="instagram-cta" href="https://www.instagram.com/joiebaby_be/" target="_blank" rel="noopener">Volg @joiebaby_be</a>
         </div>
     </section>
     <footer class="site-footer">
@@ -172,25 +172,25 @@
             <img class="footer-logo" src="Joie-Logo.webp" alt="Joie">
             <div class="footer-body">
                 <div>
-                    <p class="footer-official">Cette page est gérée par Bomedys, distributeur officiel de Joie pour la Belgique et le Luxembourg.</p>
-                    <p class="footer-disclaimer">L’assortiment, le stock, la disponibilité et les prix peuvent varier selon le magasin.</p>
+                    <p class="footer-official">Deze pagina wordt beheerd door Bomedys, officiële distributeur van Joie voor België en Luxemburg.</p>
+                    <p class="footer-disclaimer">Assortiment, voorraad, beschikbaarheid en prijzen kunnen verschillen per winkel.</p>
                 </div>
                 <nav class="footer-links" aria-label="Footer links">
-                    <a href="./info-fr.html">Info</a><span class="footer-separator">·</span>
-                    <a href="./privacy-fr.html">Politique de confidentialité</a><span class="footer-separator">·</span>
-                    <a href="./cookies-fr.html">Politique relative aux cookies</a><span class="footer-separator">·</span>
-                    <a href="./openstreetmap-fr.html">OpenStreetMap</a>
+                    <a href="./info.html">Info</a><span class="footer-separator">·</span>
+                    <a href="./privacy.html">Privacybeleid</a><span class="footer-separator">·</span>
+                    <a href="./cookies.html">Cookiebeleid</a><span class="footer-separator">·</span>
+                    <a href="./openstreetmap.html">OpenStreetMap</a>
                 </nav>
             </div>
         </div>
     </footer>
     <script>
-        const CURRENT_LANG = "fr";
+        const CURRENT_LANG = "nl";
         const STORES_JSON_URL = "./stores.json";
-        const TEXT = {"loading": "Chargement des magasins...", "no_results": "Aucun magasin trouvé.", "maps": "Ouvrir Google Maps", "webshop": "Boutique en ligne", "distance_suffix": "km", "getting_location": "Localisation en cours...", "location_success": "Trié par distance depuis votre position.", "location_error": "Impossible de récupérer votre position. Autorisez l’accès à la localisation dans votre navigateur.", "location_unavailable": "Les informations de localisation ne sont pas disponibles.", "location_timeout": "Le délai de localisation est dépassé.", "searching": "Recherche de la localisation...", "search_success": "Trié par distance depuis « {query} ».", "search_error": "Lieu introuvable. Essayez un autre code postal ou une autre ville.", "search_failed": "Une erreur est survenue pendant la recherche. Veuillez réessayer.", "enter_address": "Saisissez une adresse, un code postal ou une ville.", "geo_not_supported": "La géolocalisation n’est pas prise en charge par votre navigateur.", "load_error": "Impossible de charger les magasins. Vérifiez que stores.json se trouve à côté de cette page HTML."};
-        const GOOGLE_MAPS_HL = "fr";
-        const NOMINATIM_COUNTRY = "Belgique Luxembourg";
-        const LOCALE = "fr-BE";
+        const TEXT = {"loading": "Winkels laden...", "no_results": "Geen winkels gevonden.", "maps": "Open Google Maps", "webshop": "Webshop", "distance_suffix": "km", "getting_location": "Locatie ophalen...", "location_success": "Gesorteerd op afstand vanaf jouw locatie.", "location_error": "Kon je locatie niet ophalen. Geef toestemming voor locatietoegang in je browser.", "location_unavailable": "Locatie-informatie is niet beschikbaar.", "location_timeout": "Er is een timeout opgetreden.", "searching": "Locatie zoeken...", "search_success": "Gesorteerd op afstand vanaf “{query}”.", "search_error": "Locatie niet gevonden. Probeer een andere postcode of stad.", "search_failed": "Er ging iets mis bij het zoeken. Probeer opnieuw.", "enter_address": "Voer een adres, postcode of stad in.", "geo_not_supported": "Geolocatie wordt niet ondersteund door je browser.", "load_error": "Kon de winkels niet laden. Controleer of stores.json naast deze HTML-pagina staat."};
+        const GOOGLE_MAPS_HL = "nl";
+        const NOMINATIM_COUNTRY = "Belgium Luxembourg";
+        const LOCALE = "nl-BE";
         const PIN_ICON = "<svg class=\"pin-icon\" viewBox=\"0 0 48 48\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M24 4C15.7 4 9 10.7 9 19c0 10.2 12.5 23.2 13.7 24.4.7.7 1.9.7 2.6 0C26.5 42.2 39 29.2 39 19 39 10.7 32.3 4 24 4Zm0 22.2A7.2 7.2 0 1 1 24 11.8a7.2 7.2 0 0 1 0 14.4Z\"/><circle cx=\"24\" cy=\"19\" r=\"4.2\" fill=\"#fff\"/></svg>";
         let stores = [];
         let userLocation = null;
@@ -281,12 +281,12 @@
                 renderStores(lastSortedStores);
                 showStatus(TEXT.location_success, 'success');
                 btn.disabled = false;
-                btn.querySelector('.location-label').innerHTML = "<svg class=\"button-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M12 2a1 1 0 0 1 1 1v1.07A8 8 0 0 1 19.93 11H21a1 1 0 1 1 0 2h-1.07A8 8 0 0 1 13 19.93V21a1 1 0 1 1-2 0v-1.07A8 8 0 0 1 4.07 13H3a1 1 0 1 1 0-2h1.07A8 8 0 0 1 11 4.07V3a1 1 0 0 1 1-1Zm0 4a6 6 0 1 0 0 12A6 6 0 0 0 12 6Zm0 3.25A2.75 2.75 0 1 1 12 14.75 2.75 2.75 0 0 1 12 9.25Z\"/></svg>" + "Utiliser ma position actuelle";
+                btn.querySelector('.location-label').innerHTML = "<svg class=\"button-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M12 2a1 1 0 0 1 1 1v1.07A8 8 0 0 1 19.93 11H21a1 1 0 1 1 0 2h-1.07A8 8 0 0 1 13 19.93V21a1 1 0 1 1-2 0v-1.07A8 8 0 0 1 4.07 13H3a1 1 0 1 1 0-2h1.07A8 8 0 0 1 11 4.07V3a1 1 0 0 1 1-1Zm0 4a6 6 0 1 0 0 12A6 6 0 0 0 12 6Zm0 3.25A2.75 2.75 0 1 1 12 14.75 2.75 2.75 0 0 1 12 9.25Z\"/></svg>" + "Gebruik mijn huidige locatie";
             }, error => {
                 const message = error.code === error.PERMISSION_DENIED ? TEXT.location_error : (error.code === error.POSITION_UNAVAILABLE ? TEXT.location_unavailable : TEXT.location_timeout);
                 showStatus(message, 'error');
                 btn.disabled = false;
-                btn.querySelector('.location-label').innerHTML = "<svg class=\"button-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M12 2a1 1 0 0 1 1 1v1.07A8 8 0 0 1 19.93 11H21a1 1 0 1 1 0 2h-1.07A8 8 0 0 1 13 19.93V21a1 1 0 1 1-2 0v-1.07A8 8 0 0 1 4.07 13H3a1 1 0 1 1 0-2h1.07A8 8 0 0 1 11 4.07V3a1 1 0 0 1 1-1Zm0 4a6 6 0 1 0 0 12A6 6 0 0 0 12 6Zm0 3.25A2.75 2.75 0 1 1 12 14.75 2.75 2.75 0 0 1 12 9.25Z\"/></svg>" + "Utiliser ma position actuelle";
+                btn.querySelector('.location-label').innerHTML = "<svg class=\"button-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M12 2a1 1 0 0 1 1 1v1.07A8 8 0 0 1 19.93 11H21a1 1 0 1 1 0 2h-1.07A8 8 0 0 1 13 19.93V21a1 1 0 1 1-2 0v-1.07A8 8 0 0 1 4.07 13H3a1 1 0 1 1 0-2h1.07A8 8 0 0 1 11 4.07V3a1 1 0 0 1 1-1Zm0 4a6 6 0 1 0 0 12A6 6 0 0 0 12 6Zm0 3.25A2.75 2.75 0 1 1 12 14.75 2.75 2.75 0 0 1 12 9.25Z\"/></svg>" + "Gebruik mijn huidige locatie";
             }, { enableHighAccuracy: false, timeout: 10000, maximumAge: 300000 });
         }
         async function searchByAddress() {
