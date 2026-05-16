@@ -227,7 +227,7 @@
                 city: isFr ? (store.city_fr || store.city) : store.city,
                 category: isFr ? (store.category_fr || store.category) : store.category,
                 website: isFr ? (store.website_fr || store.website_nl || store.website) : (store.website_nl || store.website),
-                mapsQuery: isFr ? (store.maps_query_fr || `${store.name_fr || store.name}, ${store.address_fr || store.address}`) : (store.maps_query_nl || `${store.name}, ${store.address}`)
+                googleMapsUrl: store.google_maps_url || store.google_maps_url_nl || store.google_maps_url_fr || ''
             };
         }
         function toFiniteNumber(value) {
@@ -243,17 +243,8 @@
         }
         function getGoogleMapsUrl(store) {
             const local = localizedStore(store);
-            const placeId = hasValue(store.place_id) ? String(store.place_id).trim() : '';
-            const lat = toFiniteNumber(store.lat);
-            const lng = toFiniteNumber(store.lng);
-
-            if (!placeId && (lat === null || lng === null)) return '';
-
-            const queryText = lat !== null && lng !== null
-                ? `${lat},${lng}`
-                : (local.mapsQuery || `${local.name}, ${local.address}`);
-            const base = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(queryText)}&hl=${GOOGLE_MAPS_HL}`;
-            return placeId ? `${base}&query_place_id=${encodeURIComponent(placeId)}` : base;
+            const url = hasValue(local.googleMapsUrl) ? String(local.googleMapsUrl).trim() : '';
+            return url;
         }
         function showStatus(message, type = 'info') {
             const statusDiv = document.getElementById('statusMessage');
