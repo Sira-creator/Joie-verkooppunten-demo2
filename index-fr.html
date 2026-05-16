@@ -12,8 +12,8 @@
         :root {
             --joie-yellow: #F2A900;
             --joie-yellow-dark: #D89500;
-            --joie-blue: #3777C4;
-            --text-main: #393A3D;
+            --joie-blue: #407EC9;
+            --text-main: #4F4F4F;
             --text-muted: #666B72;
             --text-soft: #8A8F96;
             --line: #E9EAEC;
@@ -36,30 +36,31 @@
         .logo-container { height: var(--header-logo-height); display: inline-flex; align-items: center; line-height: 0; }
         .logo-container img { display: block; height: 100%; width: auto; max-width: min(180px, 48vw); }
         .language-switch { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 4px; border: 1px solid var(--line); border-radius: 999px; background: #fff; }
-        .lang-btn { min-width: 44px; padding: 7px 13px; border: 0; border-radius: 999px; background: transparent; color: var(--text-muted); font-size: 13px; font-weight: 800; line-height: 1.2; cursor: pointer; transition: color 0.2s ease, background-color 0.2s ease; text-align: center; }
+        .lang-btn { min-width: 44px; padding: 7px 13px; border: 0; border-radius: 999px; background: transparent; color: var(--text-muted); font-size: 13px; font-weight: 700; line-height: 1.2; cursor: pointer; transition: color 0.2s ease, background-color 0.2s ease; text-align: center; }
         .lang-btn:hover { color: var(--text-main); background: var(--surface-soft); }
         .lang-btn.active { background: var(--surface-soft); color: var(--text-main); box-shadow: none; }
         .container { width: 100%; max-width: var(--content-width); margin: 0 auto; padding: 34px var(--page-padding-x) 20px; flex: 1 0 auto; }
         .hero { margin-bottom: 22px; }
-        .eyebrow { color: var(--joie-yellow-dark); font-weight: 800; letter-spacing: .04em; text-transform: uppercase; font-size: 12px; margin-bottom: 7px; }
-        h1 { color: var(--text-main); margin-bottom: 5px; font-size: clamp(30px, 5vw, 42px); line-height: 1.12; font-weight: 800; letter-spacing: -0.03em; }
-        .subtitle { color: var(--text-muted); margin-bottom: 0; font-size: 18px; max-width: 720px; }
+        .eyebrow { color: var(--joie-yellow-dark); font-weight: 700; letter-spacing: .04em; text-transform: uppercase; font-size: 12px; margin-bottom: 7px; }
+        h1 { color: var(--text-main); margin-bottom: 5px; font-size: clamp(30px, 5vw, 42px); line-height: 1.12; font-weight: 700; letter-spacing: -0.03em; }
+        .subtitle { color: var(--text-muted); margin-bottom: 0; font-size: 20px; max-width: 720px; }
         .search-section { background: linear-gradient(180deg, #fff 0%, #fffaf0 100%); margin-bottom: 24px; padding: 18px; border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow); }
         .input-group { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 10px; margin-bottom: 12px; }
-        input[type="text"] { width: 100%; min-width: 0; padding: 13px 16px; border: 1px solid var(--line); border-radius: 12px; font-size: 15px; background: #fff; transition: border-color .2s ease, box-shadow .2s ease; }
+        input[type="text"] { width: 100%; min-width: 0; padding: 13px 16px; border: 1px solid var(--line); border-radius: 8px; font-size: 15px; background: #fff; transition: border-color .2s ease, box-shadow .2s ease; }
         input[type="text"]:focus { outline: none; border-color: var(--joie-yellow); box-shadow: 0 0 0 4px rgba(242,169,0,.13); }
         input[type="text"]::placeholder { color: #9A9EA5; }
-        button { padding: 13px 18px; border: 0; border-radius: 12px; font-size: 15px; font-weight: 800; line-height: 1.2; cursor: pointer; white-space: nowrap; transition: all .2s ease; }
+        button { padding: 13px 18px; border: 0; border-radius: 8px; font-size: 15px; font-weight: 700; line-height: 1.2; cursor: pointer; white-space: nowrap; transition: all .2s ease; }
+        button:hover { transform: translateY(-1px); }
         .btn-primary { background: var(--joie-yellow); color: #fff; }
         .btn-primary:hover { background: var(--joie-yellow-dark); transform: translateY(-1px); }
         .btn-secondary { background: #fff; color: var(--text-muted); border: 1px solid #D8DADE; }
-        .btn-secondary:hover { background: var(--surface-soft); color: var(--text-main); border-color: #BFC3C9; }
-        .btn-location { width: 100%; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: var(--joie-blue); color: #fff; font-weight: 800; }
+        .btn-secondary:hover { background: var(--surface-soft); color: var(--text-main); border-color: #4F4F4F; }
+        .btn-location { width: 100%; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: var(--joie-blue); color: #fff; font-weight: 700; }
         .btn-location:hover { background: #2E66AA; transform: translateY(-1px); }
         .btn-location:disabled { background: var(--line); color: #999; cursor: not-allowed; transform: none; }
         .button-icon { width: 18px; height: 18px; flex: 0 0 auto; display: block; }
         .location-label { display: inline-flex; align-items: center; justify-content: center; gap: 8px; line-height: 1.2; }
-        .status-message { padding: 12px 15px; border-radius: 12px; margin-top: 12px; font-size: 14px; font-weight: 700; }
+        .status-message { padding: 12px 15px; border-radius: 8px; margin-top: 12px; font-size: 14px; font-weight: 700; }
         .status-info { background: #EAF4FC; color: var(--joie-blue); border-left: 4px solid var(--joie-blue); }
         .status-error { background: #FFF0F0; color: #B42318; border-left: 4px solid #D92D20; }
         .status-success { background: #FFF7E1; color: #946300; border-left: 4px solid var(--joie-yellow); }
@@ -68,30 +69,31 @@
         .store-card:hover { border-color: rgba(242,169,0,.65); box-shadow: 0 12px 28px rgba(242,169,0,.12); transform: translateY(-1px); }
         .store-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 14px; margin-bottom: 10px; }
         .store-title-row { display: flex; align-items: flex-start; gap: 10px; min-width: 0; }
-        .pin-icon { width: 28px; height: 28px; flex: 0 0 auto; color: var(--joie-yellow); margin-top: -2px; filter: drop-shadow(0 5px 8px rgba(242,169,0,.20)); }
-        .store-name { font-size: 18px; font-weight: 800; color: var(--text-main); line-height: 1.25; }
-        .store-distance { background: var(--joie-blue); color: #fff; padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 800; white-space: nowrap; }
-        .store-address { color: var(--text-muted); margin: 0 0 15px 38px; font-size: 14px; line-height: 1.5; }
-        .store-actions { display: flex; gap: 9px; flex-wrap: wrap; margin-left: 38px; }
-        .store-actions a { padding: 10px 15px; border-radius: 12px; font-size: 14px; font-weight: 800; border: 1px solid; text-align: center; transition: all .2s ease; }
-        .btn-maps { background: var(--joie-yellow); color: #fff; border-color: var(--joie-yellow); }
+        .pin-icon { width: 25px; height: 25px; flex: 0 0 auto; color: var(--joie-yellow); margin-top: -2px; filter: drop-shadow(0 5px 8px rgba(242,169,0,.20)); }
+        .store-name { font-size: 18px; font-weight: 700; color: var(--text-main); line-height: 1.25; }
+        .store-distance { background: var(--joie-blue); color: #fff; padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 700; white-space: nowrap; }
+        .store-address { color: var(--text-muted); margin: 0 0 15px 35px; font-size: 14px; line-height: 1.5; }
+        .store-actions { display: flex; gap: 9px; flex-wrap: wrap; margin-left: 35px; }
+        .store-actions a { padding: 10px 15px; border-radius: 8px; font-size: 14px; font-weight: 700; border: 1px solid; text-align: center; transition: all .2s ease; }
+        .store-actions a:hover { transform: translateY(-1px); }
+        .btn-maps { background: var(--joie-yellow); border-radius: 8px; color: #fff; border-color: var(--joie-yellow); }
         .btn-maps:hover { background: var(--joie-yellow-dark); border-color: var(--joie-yellow-dark); }
-        .btn-website { background: #fff; color: var(--text-main); border-color: #D8DADE; }
-        .btn-website:hover { background: var(--surface-soft); border-color: #BFC3C9; }
+        .btn-website { background: #fff; border-radius: 8px; color: var(--text-muted); border-color: #666B72; }
+        .btn-website:hover { background: var(--surface-soft); color: var(--text-main); border-color: #4F4F4F; }
         .loading, .no-results { text-align: center; padding: 42px 22px; color: var(--text-soft); background: var(--surface-soft); border-radius: 18px; border: 1px solid var(--line); font-weight: 700; }
         .instagram-section { width: 100%; max-width: var(--content-width); margin: 44px auto 0; padding: 0 var(--page-padding-x); }
-        .instagram-card { display: grid; grid-template-columns: auto 1fr auto; gap: 18px; align-items: center; padding: 24px; border-radius: 22px; background: radial-gradient(circle at top left, #fff4d4 0%, #fff 46%, #f7f7f7 100%); border: 1px solid var(--line); box-shadow: var(--shadow); }
-        .instagram-badge { width: 58px; height: 58px; border-radius: 18px; display: inline-flex; align-items: center; justify-content: center; color: #fff; background: linear-gradient(135deg, #F2A900, #E4405F 55%, #833AB4); box-shadow: 0 14px 28px rgba(228,64,95,.20); }
+        .instagram-card { display: grid; grid-template-columns: auto 1fr auto; gap: 18px; align-items: center; padding: 24px; border-radius: 18px; background: radial-gradient(circle at top left, #fff4d4 0%, #fff 46%, #f7f7f7 100%); border: 1px solid var(--line); box-shadow: var(--shadow); }
+        .instagram-badge { width: 53px; height: 53px; border-radius: 18px; display: inline-flex; align-items: center; justify-content: center; color: #fff; background: linear-gradient(135deg, #F2A900, #E4405F 55%, #833AB4); box-shadow: 0 14px 28px rgba(228,64,95,.20); }
         .instagram-icon { width: 30px; height: 30px; }
-        .instagram-title { font-size: 22px; line-height: 1.2; font-weight: 800; margin-bottom: 4px; color: var(--text-main); }
+        .instagram-title { font-size: 20px; line-height: 1.2; font-weight: 700; margin-bottom: 4px; color: var(--text-main); }
         .instagram-text { color: var(--text-muted); font-size: 15px; max-width: 560px; }
-        .instagram-cta { display: inline-flex; align-items: center; justify-content: center; padding: 12px 18px; border-radius: 999px; background: #393A3D; color: #fff; font-weight: 800; white-space: nowrap; transition: all .2s ease; }
-        .instagram-cta:hover { background: var(--joie-blue); transform: translateY(-1px); }
+        .instagram-cta { display: inline-flex; align-items: center; justify-content: center; padding: 12px 18px; border-radius: 8px; background: var(--joie-blue); color: #fff; font-weight: 700; font-size: 14px; white-space: nowrap; transition: all .2s ease; }
+        .instagram-cta:hover { background: #2E66AA; transform: translateY(-1px); }
         .site-footer { margin-top: 28px; padding: 36px var(--page-padding-x); background: var(--surface-soft); color: var(--text-soft); font-size: 12px; line-height: 1.5; flex-shrink: 0; }
         .footer-content { width: 100%; max-width: var(--content-width); margin: 0 auto; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 18px; align-items: start; }
         .footer-logo { display: block; height: 20px; width: auto; margin-top: 3px; filter: grayscale(100%) contrast(110%); opacity: .64; }
         .footer-body { min-width: 0; display: flex; flex-direction: column; gap: 10px; }
-        .footer-official { color: #74787F; font-weight: 800; margin-bottom: 2px; }
+        .footer-official { color: #74787F; font-weight: 700; margin-bottom: 2px; }
         .footer-disclaimer { color: var(--text-soft); margin-bottom: 0; }
         .footer-links { display: flex; flex-wrap: wrap; align-items: center; gap: 7px 11px; color: #A5A9AF; }
         .footer-links a { color: #74787F; border-bottom: 1px solid #D0D3D7; }
@@ -102,7 +104,7 @@
             .top-header { padding-top: 10px; padding-bottom: 10px; }
             .header-content { position: relative; justify-content: center; }
             .logo-container { position: absolute; left: 0; }
-            .language-switch { margin: 0 auto; }
+            .language-switch { position: absolute; right: 0; margin: 0; }
             .container { padding-top: 24px; }
             .subtitle { font-size: 16px; }
             .search-section { padding: 14px; border-radius: 16px; }
@@ -161,8 +163,8 @@
         <div class="instagram-card">
             <div class="instagram-badge"><svg class="instagram-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-2.35a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z"/></svg></div>
             <div>
-                <h2 class="instagram-title">Suivez Joie Baby Belgique & Luxembourg</h2>
-                <p class="instagram-text">Restez informé des nouveautés, de l’inspiration produit et des actualités locales via la page Instagram de Joie pour la Belgique et le Luxembourg.</p>
+                <h2 class="instagram-title">Joie Belgique & Luxembourg sur Instagram</h2>
+                <p class="instagram-text">Suivez-nous pour de l’inspiration, des conseils et les nouveautés produits.</p>
             </div>
             <a class="instagram-cta" href="https://www.instagram.com/joiebaby_be/" target="_blank" rel="noopener">Suivre @joiebaby_be</a>
         </div>
