@@ -1,1 +1,55 @@
+name: Sync Joie BeLux Stores
+
+on:
+  schedule:
+    - cron: '*/5 * * * *' # Elke 5 minuten
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install pandas requests
+
+      - name: Fetch Google Sheet and Update JSON files
+        env:
+          GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
+        run: |
+          python << 'EOF'
+          import pandas as pd
+          import json
+          import os
+
+          sheet_id = os.environ.get('GOOGLE_SHEET_ID')
+          sheet_name = 'Stores'
+          url = f'https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq?tqx=out:csv&sheet={sheet_name}'
+
+          df = pd.read_csv(url )
+          
+          # Maak de data aan
+          all_stores = df.to_dict(orient='records')
+
+          # Update alle drie de bestanden die in uw repo staan
+          for filename in ['stores.json', 'stores-nl.json', 'stores-fr.json']:
+              with open(filename, 'w', encoding='utf-8') as f:
+                  json.dump(all_stores, f, ensure_ascii=False, indent=2)
+          
+          print(f"✓ {len(all_stores)} winkels gesynchroniseerd naar stores.json, stores-nl.json en stores-fr.json")
+          EOF
+
+      - name: Commit and push
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git add stores.json stores-nl.json stores-fr.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-sync stores from Google Sheet" && git push)
 
