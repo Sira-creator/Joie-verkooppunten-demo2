@@ -3,10 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wettelijke informatie | Joie verkooppunten België en Luxemburg</title>
   <meta name="description" content="Wettelijke informatie over de Joie store locator voor België en Luxemburg, beheerd door BOMEDYS NV.">
   <meta name="robots" content="noindex, follow">
 
-  <title>Wettelijke informatie | Joie verkooppunten België en Luxemburg</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -40,7 +43,7 @@
 
     body {
       min-height: 100vh;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       background: var(--surface);
       color: var(--text-main);
       line-height: 1.6;
@@ -55,6 +58,11 @@
     a {
       color: inherit;
       text-decoration: none;
+    }
+
+    button,
+    input {
+      font: inherit;
     }
 
     .top-header {
@@ -158,15 +166,6 @@
       box-shadow: var(--shadow);
     }
 
-    .eyebrow {
-      color: var(--joie-yellow-dark);
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      font-size: 12px;
-      margin-bottom: 7px;
-    }
-
     h1 {
       color: var(--text-main);
       font-size: clamp(30px, 5vw, 42px);
@@ -178,7 +177,7 @@
 
     h2 {
       font-size: 20px;
-      margin: 28px 0 8px;
+      margin: 26px 0 8px;
       font-weight: 700;
       color: var(--text-main);
     }
@@ -188,17 +187,8 @@
       margin-bottom: 12px;
     }
 
-    ul {
-      margin: 10px 0 14px 22px;
-      color: var(--text-muted);
-    }
-
-    li {
-      margin-bottom: 6px;
-    }
-
     .company-card {
-      margin: 18px 0 18px;
+      margin-top: 16px;
       padding: 18px;
       border-radius: 18px;
       background: var(--surface-warm);
@@ -206,30 +196,23 @@
     }
 
     .company-card p {
-      margin-bottom: 5px;
+      margin-bottom: 0;
     }
 
-    .company-card a {
+    .content-card a {
       color: var(--joie-yellow-dark);
       font-weight: 700;
       border-bottom: 1px solid rgba(216, 149, 0, 0.35);
     }
 
-    .company-card a:hover {
+    .content-card a:hover {
       border-bottom-color: var(--joie-yellow-dark);
     }
 
-    .note-box {
-      margin-top: 18px;
-      padding: 16px;
-      border-radius: 14px;
-      background: #F7FAFF;
-      border: 1px solid #D8E6F7;
-      color: var(--text-muted);
-    }
-
-    .note-box strong {
-      color: var(--text-main);
+    .small-note {
+      font-size: 14px;
+      color: var(--text-soft);
+      margin-top: 4px;
     }
 
     .site-footer {
@@ -323,7 +306,9 @@
       }
 
       .language-switch {
-        margin-left: auto;
+        position: absolute;
+        right: 0;
+        margin: 0;
       }
 
       .content-card {
@@ -333,11 +318,33 @@
 
       .footer-content {
         grid-template-columns: 1fr;
+        text-align: center;
+        justify-items: center;
         gap: 12px;
       }
 
       .footer-logo {
-        height: 18px;
+        margin: 0 auto;
+      }
+
+      .footer-body {
+        align-items: center;
+      }
+
+      .footer-links {
+        justify-content: center;
+      }
+
+      .site-footer {
+        margin-top: 24px;
+        padding-top: 32px;
+        padding-bottom: 32px;
+      }
+
+      .lang-btn {
+        min-width: 39px;
+        padding: 6px 10px;
+        font-size: 12px;
       }
     }
   </style>
@@ -346,22 +353,21 @@
 <body>
   <header class="top-header">
     <div class="header-content">
-      <a href="./index.html" class="logo-container" aria-label="Terug naar de Joie store locator">
-        <img src="./Joie-Logo.webp" alt="Joie">
+      <a class="logo-container" href="./index.html" aria-label="Joie">
+        <img src="Joie-Logo.webp" alt="Joie">
       </a>
 
-      <nav class="language-switch" aria-label="Taalkeuze">
-        <a class="lang-btn active" href="./legal.html" hreflang="nl" aria-current="page">NL</a>
-        <a class="lang-btn" href="./legal-fr.html" hreflang="fr">FR</a>
+      <nav class="language-switch" aria-label="Taalkeuze / Choix de langue">
+        <a class="lang-btn active" href="./info.html" hreflang="nl">NL</a>
+        <a class="lang-btn" href="./info-fr.html" hreflang="fr">FR</a>
       </nav>
     </div>
   </header>
 
   <main class="page">
-    <a href="./index.html" class="back-link">← Terug naar de store locator</a>
+    <a class="back-link" href="./index.html">← Terug naar de verkooppunten</a>
 
     <article class="content-card">
-      <p class="eyebrow">Joie store locator</p>
       <h1>Wettelijke informatie</h1>
 
       <p>
@@ -370,33 +376,33 @@
       </p>
 
       <p>
-        Het doel van deze pagina is om consumenten in België en Luxemburg snel en eenvoudig een verkooppunt van
-        het merk Joie in hun buurt te laten vinden, of hen te begeleiden naar een lokale webshop van een verkooppunt.
+        Het doel van deze pagina is om consumenten in België en Luxemburg snel en eenvoudig een verkooppunt
+        van het merk Joie in hun buurt te laten vinden, of hen te begeleiden naar een lokale webshop van een verkooppunt.
       </p>
 
       <p>
         Deze website is geen webshop. Via deze website worden geen producten rechtstreeks verkocht door BOMEDYS NV.
       </p>
 
-      <h2>Beheerder van deze website</h2>
+      <h2>Beheer</h2>
 
       <div class="company-card">
-        <p><strong>BOMEDYS NV</strong></p>
-        <p>Begoniastraat 1B</p>
-        <p>9810 Nazareth</p>
-        <p>België</p>
-        <br>
-        <p>Ondernemingsnummer: <strong>0451.502.930</strong></p>
-        <p>BTW-nummer: <strong>BE 0451.502.930</strong></p>
-        <p>E-mail: <a href="mailto:info@bomedys.com">info@bomedys.com</a></p>
-        <p>Telefoon: <a href="tel:+3267211669">+32 67 21 16 69</a></p>
+        <p>
+          <strong>BOMEDYS NV</strong><br>
+          Begoniastraat 1B<br>
+          9810 Nazareth, België<br>
+          Ondernemingsnummer: 0451.502.930<br>
+          BTW-nummer: BE 0451.502.930<br>
+          <a href="mailto:info@bomedys.com">info@bomedys.com</a><br>
+          <a href="tel:+3267211669">+32 67 21 16 69</a>
+        </p>
       </div>
 
-      <h2>Belangrijke informatie over verkooppunten</h2>
+      <h2>Belangrijke informatie</h2>
 
       <p>
-        De vermelde winkels zijn onafhankelijke verkooppunten. Assortiment, voorraad, beschikbaarheid, prijzen,
-        promoties, openingsuren, leveringsmogelijkheden en dienstverlening kunnen per winkel verschillen.
+        De vermelde winkels zijn onafhankelijke verkooppunten. Assortiment, voorraad, beschikbaarheid,
+        prijzen, promoties, openingsuren, leveringsmogelijkheden en dienstverlening kunnen per winkel verschillen.
       </p>
 
       <p>
@@ -409,107 +415,70 @@
         Toch kan BOMEDYS NV niet garanderen dat alle informatie op elk moment volledig, juist of up-to-date is.
       </p>
 
-      <h2>Aansprakelijkheid</h2>
-
       <p>
-        BOMEDYS NV kan niet aansprakelijk worden gesteld voor fouten, wijzigingen, vertragingen of onvolledigheden
-        in de gegevens van verkooppunten.
-      </p>
-
-      <p>
-        BOMEDYS NV is evenmin verantwoordelijk voor de inhoud, werking, beschikbaarheid, prijzen, voorraad,
-        voorwaarden of dienstverlening van externe websites of webshops waarnaar deze store locator verwijst.
+        BOMEDYS NV is niet verantwoordelijk voor eventuele fouten, wijzigingen of onvolledigheden in de gegevens
+        van verkooppunten, noch voor de inhoud, prijzen, voorraad, beschikbaarheid of dienstverlening van externe
+        websites of webshops waarnaar deze store locator verwijst.
       </p>
 
       <h2>Externe links</h2>
 
       <p>
         Deze website kan links bevatten naar websites van verkooppunten, lokale webshops, Google Maps,
-        OpenStreetMap, Nominatim of andere externe diensten.
+        OpenStreetMap, Nominatim of andere externe diensten. Wanneer u op een externe link klikt,
+        verlaat u deze website. Het gebruik van externe websites valt onder de voorwaarden en privacyregels
+        van de betrokken externe partij.
       </p>
 
-      <p>
-        Wanneer u op een externe link klikt, verlaat u deze website. Het gebruik van externe websites valt onder
-        de voorwaarden en privacyregels van de betrokken externe partij.
-      </p>
-
-      <h2>Gebruik van locatie en zoekfunctie</h2>
+      <h2>Merkgebruik</h2>
 
       <p>
-        De store locator kan gebruikmaken van uw browserlocatie wanneer u daar zelf toestemming voor geeft.
-        Deze locatie wordt enkel gebruikt om verkooppunten in uw buurt te tonen.
-      </p>
-
-      <p>
-        U kunt de store locator ook gebruiken zonder uw browserlocatie te delen, bijvoorbeeld door te zoeken op
-        postcode, gemeente of plaatsnaam.
-      </p>
-
-      <p>
-        Meer informatie hierover vindt u in het
-        <a href="./privacy.html" style="color: var(--joie-yellow-dark); font-weight: 700; border-bottom: 1px solid rgba(216,149,0,.35);">privacybeleid</a>
-        en op de pagina over
-        <a href="./openstreetmap.html" style="color: var(--joie-yellow-dark); font-weight: 700; border-bottom: 1px solid rgba(216,149,0,.35);">OpenStreetMap en Nominatim</a>.
-      </p>
-
-      <h2>Merken en intellectuele eigendom</h2>
-
-      <p>
-        Joie is een merk van de respectieve merkhouder. Deze store locator wordt aangeboden door BOMEDYS NV in haar
-        hoedanigheid als officiële distributeur van Joie voor België en Luxemburg.
-      </p>
-
-      <p>
-        Logo's, merknamen, teksten, beelden, lay-out en andere inhoud op deze website mogen niet worden gekopieerd,
-        verspreid of gebruikt zonder voorafgaande toestemming van de rechthebbende, tenzij dit wettelijk is toegestaan.
+        Joie is een merk van de respectieve merkhouder. Deze store locator wordt aangeboden door BOMEDYS NV
+        in haar hoedanigheid als officiële distributeur van Joie voor België en Luxemburg.
       </p>
 
       <h2>Correcties of vragen</h2>
 
       <p>
         Merkt u een fout op in de gegevens van een verkooppunt, of heeft u een vraag over deze store locator?
-        Neem dan contact op met BOMEDYS NV via
-        <a href="mailto:info@bomedys.com" style="color: var(--joie-yellow-dark); font-weight: 700; border-bottom: 1px solid rgba(216,149,0,.35);">info@bomedys.com</a>.
+        Neem dan contact op via <a href="mailto:info@bomedys.com">info@bomedys.com</a>.
       </p>
 
-      <div class="note-box">
-        <p>
-          <strong>Opmerking:</strong> laat de vermelding van de bevoegde ondernemingsrechtbank/RPR indien nodig
-          nog bevestigen door BOMEDYS NV of hun boekhouder/juridisch adviseur. Voeg die informatie daarna toe aan
-          deze pagina.
-        </p>
-      </div>
+      <p class="small-note">
+        Laat de vermelding van de bevoegde ondernemingsrechtbank/RPR indien nodig nog bevestigen door BOMEDYS NV.
+      </p>
     </article>
   </main>
 
   <footer class="site-footer">
     <div class="footer-content">
-      <img src="./Joie-Logo.webp" alt="Joie" class="footer-logo">
+      <img class="footer-logo" src="Joie-Logo.webp" alt="Joie">
 
       <div class="footer-body">
-        <p class="footer-official">
-          Deze store locator wordt beheerd door BOMEDYS NV, officiële distributeur van Joie voor België en Luxemburg.
-        </p>
-
-        <p class="footer-disclaimer">
-          Assortiment, voorraad, prijzen en openingsuren kunnen per winkel verschillen. Neem voor actuele informatie rechtstreeks contact op met het verkooppunt.
-        </p>
-
-        <p class="footer-disclaimer">
-          BOMEDYS NV · Begoniastraat 1B, 9810 Nazareth, België · Ondernemingsnummer 0451.502.930 · BTW BE 0451.502.930 · info@bomedys.com · +32 67 21 16 69
-        </p>
+        <div>
+          <p class="footer-official">
+            Deze pagina wordt beheerd door Bomedys, officiële distributeur van Joie voor België en Luxemburg.
+          </p>
+          <p class="footer-disclaimer">
+            Assortiment, voorraad, beschikbaarheid en prijzen kunnen verschillen per winkel.
+          </p>
+        </div>
 
         <nav class="footer-links" aria-label="Footer links">
-          <a href="./legal.html" aria-current="page">Wettelijke informatie</a>
+          <a href="./info.html">Wettelijke informatie</a>
           <span class="footer-separator">·</span>
           <a href="./privacy.html">Privacybeleid</a>
           <span class="footer-separator">·</span>
           <a href="./cookies.html">Cookiebeleid</a>
           <span class="footer-separator">·</span>
-          <a href="./openstreetmap.html">OpenStreetMap en Nominatim</a>
+          <a href="./openstreetmap.html">OpenStreetMap</a>
         </nav>
       </div>
     </div>
   </footer>
+
+  <script>
+    localStorage.setItem('joie_language', 'nl');
+  </script>
 </body>
 </html>
