@@ -1,17 +1,71 @@
-# Joie store locator — kant-en-klaar pakket
+# Joie BeLux Store Locator
 
-Upload alle bestanden in deze map samen naar dezelfde GitHub Pages-map of webhostingmap. De belangrijkste bestanden zijn `index.html`, `index-fr.html`, `stores.json` en `Joie-Logo.webp`.
+Deze website is een eenvoudige, tweetalige store locator voor Joie-verkooppunten in België en Luxemburg.
 
-## Nederlandse en Franse landingspagina
+De website helpt bezoekers om snel een verkooppunt, Google Maps-route of webshop te vinden.
 
-`index.html` is de Nederlandse store locator. `index-fr.html` is de Franse store locator. De taalkeuze bovenaan navigeert tussen deze twee pagina’s. De footerlinks verwijzen automatisch naar de juiste taalversie van de info-, privacy-, cookie- en OpenStreetMap-pagina’s.
+## Pagina’s
 
-## Storedata uit spreadsheet
+- `index.html` — Nederlandstalige store locator
+- `index-fr.html` — Franstalige store locator
+- `info.html` / `info-fr.html` — wettelijke informatie
+- `privacy.html` / `privacy-fr.html` — privacybeleid
+- `cookies.html` / `cookies-fr.html` — cookiebeleid
+- `openstreetmap.html` / `openstreetmap-fr.html` — informatie over OpenStreetMap en Nominatim
 
-Gebruik `stores-spreadsheet-template.xlsx` of `stores-spreadsheet-template.csv` als basis voor de spreadsheet. Publiceer de spreadsheet vervolgens als JSON in dezelfde kolomstructuur, of exporteer naar `stores.json`. De website verwacht standaard het bestand `stores.json` in dezelfde map als de HTML-pagina’s.
+## Winkeldata
 
-Belangrijke kolommen zijn `website_nl` en `website_fr`. De Nederlandse pagina gebruikt `website_nl`; de Franse pagina gebruikt `website_fr`. Voor Google Maps gebruikt de website `place_id` wanneer beschikbaar, en anders `maps_query_nl` of `maps_query_fr`.
+De verkooppunten worden ingeladen via JSON-bestanden:
 
-## Google Maps in juiste taal
+- `stores.json`
+- `stores-nl.json`
+- `stores-fr.json`
 
-De Nederlandse pagina voegt `hl=nl` toe aan de Google Maps-link. De Franse pagina voegt `hl=fr` toe aan de Google Maps-link.
+De winkeldata bevat onder andere:
+
+- winkelnaam
+- adres
+- postcode
+- stad
+- land
+- website of webshop
+- Google Maps-link
+- coördinaten
+- taalvelden voor Nederlands en Frans
+
+De data kan worden beheerd via een gekoppelde spreadsheet en daarna worden omgezet naar JSON.
+
+## Functionaliteiten
+
+De website bevat:
+
+- Nederlandstalige en Franstalige versie
+- zoekfunctie op plaats, stad of postcode
+- knop om de huidige locatie te gebruiken
+- sortering van winkels op afstand na een locatiezoekopdracht
+- links naar Google Maps
+- links naar webshops of websites van verkooppunten
+- juridische, privacy- en cookiepagina’s
+
+## Privacy
+
+De huidige versie gebruikt geen Meta Pixel, Google Analytics of marketingcookies.
+
+De locatie van de bezoeker wordt enkel gebruikt na toestemming van de browser en dient alleen om winkels op afstand te sorteren.
+
+## Externe diensten
+
+De website kan gebruikmaken van:
+
+- Google Maps voor route- en winkelverwijzingen
+- OpenStreetMap en Nominatim voor locatieherkenning
+- externe websites of webshops van verkooppunten
+
+## Hosting
+
+Voor officieel gebruik wordt aanbevolen om de website te plaatsen onder een officiële domeinnaam of hostingomgeving van Bomedys.
+
+Voorgestelde domeinnaam:
+
+`joiebaby-stores-belux.be`
+
